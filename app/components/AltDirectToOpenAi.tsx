@@ -84,7 +84,7 @@ export function Steps() {
 
   return (
     <section className="bg-white dark:bg-gray-900">
-      <div className="mx-auto max-w-screen-xl px-4 py-8 lg:px-6 lg:py-16">
+      <div className="mx-auto max-w-screen-xl px-4 py-8 lg:px-6 lg:py-2">
         <div className="space-y-8 sm:gap-6 lg:grid lg:grid-cols-3 lg:space-y-0 xl:gap-10">
           <div className="mx-auto flex max-w-lg flex-col rounded-lg border border-gray-100 bg-white p-6 text-center text-gray-900 shadow dark:border-gray-600 dark:bg-gray-800 dark:text-white xl:p-8">
             <h3 className="mb-4 text-2xl font-semibold">Select</h3>
@@ -109,7 +109,7 @@ export function Steps() {
               className="max-w-lg rounded-lg w-full relative"
               width={300}
               height={300}
-              src={imagePreview || '/logo.png'}
+              src={imagePreview || '/imagePlaceholder.png'}
               alt="image description"
             />
 

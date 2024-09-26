@@ -1,13 +1,18 @@
 import { Button } from "flowbite-react";
+import Image from 'next/image';
 
 export function DefaultHero() {
   return (
     <section className="bg-white dark:bg-gray-900">
-      <div className="mx-auto max-w-screen-xl px-4 py-8 text-center lg:px-12 lg:py-16">
+      <div className="mx-auto max-w-screen-xl px-4 py-8 text-center lg:px-12 lg:py-8">
+      <div className="flex justify-center items-center">
+      <Image src='/logo.png' width={100} height={100} alt='a pink lightbulb' />
+</div>
+        
         <h1 className="mb-4 text-4xl font-extrabold leading-none tracking-tight text-gray-900 dark:text-white md:text-5xl lg:text-6xl">
           Generate alt-text for your images
         </h1>
-        <p className="mb-8 text-lg font-normal text-gray-500 dark:text-gray-400 sm:px-16 lg:text-xl xl:px-48">
+        <p className="mb-4 text-lg font-normal text-gray-500 dark:text-gray-400 sm:px-16 lg:text-xl xl:px-48">
         Generate precise and accessible alt-text effortlessly for your images with my AI-powered tool.
         </p>
         {/*
