@@ -18,12 +18,12 @@ interface OpenAIResponse {
 export async function POST(request: Request) {
   try {
     // Parse the incoming JSON body
-    const { image_base64 } = await request.json();
+    const { message } = await request.json();
 
-    // Validate the base64 image
-    if (!image_base64 || typeof image_base64 !== 'string') {
+    // Validate the message
+    if (!message || typeof message !== 'string') {
       return NextResponse.json(
-        { message: 'Image is required and must be a base64 string.' },
+        { message: 'Message is required and must be a string.' },
         { status: 400 }
       );
     }
@@ -52,7 +52,7 @@ export async function POST(request: Request) {
             content: 
             [
               { type: 'text', text: 'Give me an alt-text for this image. Do not add alt text or similar to the start.' }, 
-              { type: "image_url","image_url": { "url": `data:image/jpeg;base64,${image_base64}`, detail: 'low'} }
+              { type: "image_url","image_url": { "url": message, detail: 'low'} }
             ]
       }],
         max_tokens: 150,         // Adjust as needed
@@ -85,3 +85,21 @@ export async function POST(request: Request) {
     );
   }
 }
+
+
+/*
+[
+  {
+    "role": "user",
+    "content": [
+      {"type": "text", "text": "What’s in this image?"},
+      {
+        "type": "image_url",
+        "image_url": {
+          "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/dd/Gfp-wisconsin-madison-the-nature-boardwalk.jpg/2560px-Gfp-wisconsin-madison-the-nature-boardwalk.jpg",
+        },
+      },
+    ],
+  }
+],
+*/

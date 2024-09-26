@@ -44,6 +44,9 @@ export function Steps() {
         // Upload the file to EdgeStore
         const uploadResponse = await edgestore.publicFiles.upload({
           file,
+          options: {
+            temporary: true,
+          },
           onProgressChange: (progress) => {
             console.log(progress);
           },
