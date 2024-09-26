@@ -38,7 +38,7 @@ export function Steps() {
   };
 
   const handleUpload = async () => {
-    setReply("Working on it...")
+    setReply("Working on it...");
     if (file && edgestore?.publicFiles?.upload) {
       try {
         // Upload the file to EdgeStore
@@ -77,21 +77,19 @@ export function Steps() {
     }
   };
 
-    // Function to copy text to the clipboard
-    const handleCopyClick = () => {
-      const textToCopy = reply; // Get the text from the state or textarea
-      if (navigator.clipboard) {
-        navigator.clipboard.writeText(textToCopy)
-          .then(() => {
-            alert('Text copied to clipboard!');
-          })
-          .catch((err) => {
-            console.error('Failed to copy text: ', err);
-          });
-      }
-    };
-
-
+  // Function to copy text to the clipboard
+  const handleCopyClick = () => {
+    const textToCopy = reply; // Get the text from the state or textarea
+    if (navigator.clipboard) {
+      navigator.clipboard.writeText(textToCopy)
+        .then(() => {
+          alert('Text copied to clipboard!');
+        })
+        .catch((err) => {
+          console.error('Failed to copy text: ', err);
+        });
+    }
+  };
 
   return (
     <section className="bg-white dark:bg-gray-900">
@@ -113,19 +111,18 @@ export function Steps() {
           <div className="mx-auto flex max-w-lg flex-col rounded-lg border border-gray-100 bg-white p-6 text-center text-gray-900 shadow dark:border-gray-600 dark:bg-gray-800 dark:text-white xl:p-8">
             <h3 className="mb-4 text-2xl font-semibold">Preview</h3>
             <p className="text-gray-500 dark:text-gray-400 sm:text-lg">
-              Your photo will be shown here. If you're happy, press Generate
+              Your photo will be shown here. If you&#39;re happy, press Generate
             </p>
 
             <Image
               className="max-w-lg rounded-lg w-full relative"
               width={300}
               height={300}
-              // Ensure imagePreview is a string, fallback to default image if null
               src={imagePreview || '/logo.png'}
               alt="image description"
             />
 
-            <Button className='mt-8' onClick={handleUpload}>Generate</Button>
+            <Button className="mt-8" onClick={handleUpload}>Generate</Button>
           </div>
 
           <div className="mx-auto flex max-w-lg flex-col rounded-lg border border-gray-100 bg-white p-6 text-center text-gray-900 shadow dark:border-gray-600 dark:bg-gray-800 dark:text-white xl:p-8">
@@ -137,11 +134,11 @@ export function Steps() {
             <p
               id="messageReply"
               className="block p-2.5 w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
-              
-            >{reply}
+            >
+              {reply}
             </p>
 
-            <Button id='copyMe' className="mt-8" onClick={handleCopyClick}>
+            <Button id="copyMe" className="mt-8" onClick={handleCopyClick}>
               Copy
             </Button>
           </div>

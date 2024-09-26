@@ -73,9 +73,6 @@ export function Steps() {
     const textToCopy = reply; // Get the text from the state or textarea
     if (navigator.clipboard) {
       navigator.clipboard.writeText(textToCopy)
-//        .then(() => {
-//          alert('Text copied to clipboard!');
-//        })
         .catch((err) => {
           console.error('Failed to copy text: ', err);
         });
@@ -102,7 +99,7 @@ export function Steps() {
           <div className="mx-auto flex max-w-lg flex-col rounded-lg border border-gray-100 bg-white p-6 text-center text-gray-900 shadow dark:border-gray-600 dark:bg-gray-800 dark:text-white xl:p-8">
             <h3 className="mb-4 text-2xl font-semibold">Preview</h3>
             <p className="text-gray-500 dark:text-gray-400 sm:text-lg">
-              Your photo will be shown here. If you're happy, press Generate
+              Your photo will be shown here. If you&#39;re happy, press Generate
             </p>
 
             <Image
@@ -113,7 +110,7 @@ export function Steps() {
               alt="image description"
             />
 
-            <Button className='mt-8' onClick={handleUpload}>Generate</Button>
+            <Button className="mt-8" onClick={handleUpload}>Generate</Button>
           </div>
 
           <div className="mx-auto flex max-w-lg flex-col rounded-lg border border-gray-100 bg-white p-6 text-center text-gray-900 shadow dark:border-gray-600 dark:bg-gray-800 dark:text-white xl:p-8">
@@ -129,7 +126,7 @@ export function Steps() {
               {reply}
             </p>
 
-            <Button id='copyMe' className="mt-8" onClick={handleCopyClick}>
+            <Button id="copyMe" className="mt-8" onClick={handleCopyClick}>
               Copy
             </Button>
           </div>
