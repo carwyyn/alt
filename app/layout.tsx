@@ -6,7 +6,7 @@ import { Analytics } from '@vercel/analytics/react';
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: "Alt-text henerator",
+  title: "Alt-text generator",
   description: "Made by DigiComms.ai",
 };
 
